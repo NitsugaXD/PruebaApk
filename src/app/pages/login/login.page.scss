@@ -1,0 +1,16 @@
+.barra{
+    --background: rgb(2,0,36);
+    --background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(193,20,20,1) 15%, rgba(255,111,0,1) 35%, rgba(255,122,0,1) 50%, rgba(255,131,0,1) 65%, rgba(255,218,0,1) 85%, rgba(231,245,7,1) 100%);
+}
+.buttun{
+    --background: rgb(0,42,255);
+    --background: radial-gradient(circle, rgba(0,42,255,1) 21%, rgba(70,252,118,1) 75%)
+}
+.butin{
+    --background: rgb(255,0,0);
+    --background: radial-gradient(circle, rgba(255,0,0,1) 29%, rgba(242,252,70,1) 81%);
+}
+.inputs{
+    --background: rgb(0,185,255);
+    --background: radial-gradient(circle, rgba(0,185,255,1) 29%, rgba(70,252,85,1) 81%);
+}

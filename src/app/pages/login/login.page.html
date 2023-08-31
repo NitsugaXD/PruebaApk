@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="barra">
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="barra">
+  <div class="centrar">
+    <ion-img src="assets/loginsvg.svg"></ion-img>
+    <ion-label>Ingresa tus Credenciales:</ion-label>
+    <ion-item class="fondo input ion-margin-top" lines="none">
+      <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="mdl_user"></ion-input>
+    </ion-item>
+    <ion-item class="fondo input ion-margin-top" lines="none">
+      <ion-input label="Contraseña" type="password" labelPlacement="floating" [(ngModel)]="mdl_contra"></ion-input>
+    </ion-item>
+    <ion-button (click)="ingresar()" expand="block" class="ion-margin-top boton barra" class="buttun"> Ingresar </ion-button>
+    <ion-button (click)="restablecer()" expand="block" class="ion-margin-top boton barra" class="butin">Restablecer Contraseña</ion-button>
+  </div>
+  <ion-alert
+  [isOpen]="isAlertOpen"
+  header="Información"
+  message="Credenciales Inválidas"
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)">
+</ion-alert>
+</ion-content>
