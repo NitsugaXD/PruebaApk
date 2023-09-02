@@ -13,12 +13,19 @@ export class LoginPage implements OnInit {
   colorgre: string="success";
   isAlertOpen = false;
   alertButtons = ['OK'];
+  user:string="";
+  password:string="";
   constructor(private router: Router) { }
 
   ngOnInit() {
+    let parametros = this.router.getCurrentNavigation();
+    if(parametros?.extras.state) {
+      this.mdl_user = parametros?.extras.state['usuario'];
+      this.mdl_contra = parametros?.extras.state['pass'];
+    }
   }
   ingresar(){
-    if(this.mdl_user == 'Agustin' && this.mdl_contra == 'agustin2004'){
+    if(this.user == this.mdl_user && this.password == this.mdl_contra){
       
       let parametros: NavigationExtras = {
         state: {
@@ -32,10 +39,19 @@ export class LoginPage implements OnInit {
     }
   }
   restablecer(){
-    this.router.navigate(["restcont"])
+    let parametros: NavigationExtras = {
+      state: {
+        user: this.mdl_user,
+        pass: this.mdl_contra
+      }
+    }
+    this.router.navigate(["restcont"],parametros)
   }
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;
+  }
+  registrar(){
+    this.router.navigate(["registro"])
   }
 
 }

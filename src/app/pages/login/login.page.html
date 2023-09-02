@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="barra">
     <ion-title>Bienvenido</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="registrar()" class="negro" >Registrarse</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -9,10 +12,10 @@
     <ion-img src="assets/loginsvg.svg"></ion-img>
     <ion-label>Ingresa tus Credenciales:</ion-label>
     <ion-item class="fondo input ion-margin-top" lines="none">
-      <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="mdl_user"></ion-input>
+      <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="user"></ion-input>
     </ion-item>
     <ion-item class="fondo input ion-margin-top" lines="none">
-      <ion-input label="Contraseña" type="password" labelPlacement="floating" [(ngModel)]="mdl_contra"></ion-input>
+      <ion-input label="Contraseña" type="password" labelPlacement="floating" [(ngModel)]="password"></ion-input>
     </ion-item>
     <ion-button (click)="ingresar()" expand="block" class="ion-margin-top boton barra" class="buttun"> Ingresar </ion-button>
     <ion-button (click)="restablecer()" expand="block" class="ion-margin-top boton barra" class="butin">Restablecer Contraseña</ion-button>
