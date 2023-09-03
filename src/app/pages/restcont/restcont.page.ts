@@ -26,7 +26,7 @@ pass:string="";
       this.pass=this.contrasena
       let parametros: NavigationExtras= {
         state: {
-          user: this.mdl_user,
+        
         }
       }
     }

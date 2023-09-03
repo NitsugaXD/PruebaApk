@@ -6,6 +6,7 @@ import { NavigationExtras, Router } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
   mdl_user: string = '';
   mdl_contra: string = '';

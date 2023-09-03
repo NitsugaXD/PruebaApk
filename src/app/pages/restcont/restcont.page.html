@@ -1,19 +1,28 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="barra">
     <ion-back-button defaultHref="/" slot="start"></ion-back-button>
     <ion-title>Restablecer Contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-<ion-item>
-  <ion-input [(ngModel)]="usuario">
+<ion-content [fullscreen]="true" class="barra">
+
+  <div class="login-container">
+
+    <ion-img src="assets/restablecer.svg"></ion-img>
+
+
+<ion-item class="input-field butin" lines="none">
+  <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="usuario">
     Ingresa tu usuario para restablecer tu contraseña
   </ion-input>
 </ion-item>
-<ion-item>
-  <ion-input [(ngModel)]="contrasena">
+
+<ion-item class="input-field butin" lines="none">
+  <ion-input label="Contraseña" labelPlacement="floating" [(ngModel)]="contrasena">
     Ingresa tu contraseña para restablecerla
   </ion-input>
 </ion-item>
+
+</div>
 </ion-content>
