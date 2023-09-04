@@ -17,8 +17,6 @@ export class LoginPage implements OnInit {
   user:string="";
   password:string="";
   constructor(private router: Router){ 
-      
- 
   }
 
   ngOnInit(){
@@ -30,6 +28,7 @@ export class LoginPage implements OnInit {
           this.mdlnew_contra=parametros?.extras.state['newpass']
         }
     };
+    
   ingresar(){
     if (this.user == this.mdl_user && (this.password == this.mdl_contra || this.password == this.mdlnew_contra)){
       let parametros: NavigationExtras = {
@@ -63,7 +62,7 @@ export class LoginPage implements OnInit {
     this.router.navigate(["registro"])
   }
   recargar(){
-    window.location.reload();
+    window.location.reload()
   }
 
 }
