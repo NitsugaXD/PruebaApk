@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-restcont',
@@ -7,13 +8,16 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./restcont.page.scss'],
 })
 export class RestcontPage implements OnInit {
+recargar: boolean = true;
 usuario:string="";
 contrasena:string="";
 user:string="";
 pass:string="";
+newpass:string="";
+isAlertOpen = false;
+alertButtons = ['OK'];
 
-  constructor(private router: Router) { }
-
+  constructor(private router: Router, private navCtrl: NavController) { }
   ngOnInit() {
     let parametros = this.router.getCurrentNavigation();
     if(parametros?.extras.state) {
@@ -26,13 +30,28 @@ pass:string="";
       this.pass=this.contrasena
       let parametros: NavigationExtras= {
         state: {
-        
+          usuario: this.user,
+          newpass: this.contrasena
         }
       }
+      console.log(this.user, this.pass)
+      this.router.navigate(['login'],parametros)  
     }
     else{
-
+      this.isAlertOpen = true;
     }
   }
-
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
+  volver(){
+    let parametros: NavigationExtras = {
+      state: {
+        usuario: this.usuario,
+        pass: this.contrasena,
+        newpass:this.newpass
+      }
+  }
+  this.router.navigate(['login'],parametros);
+  }
 }

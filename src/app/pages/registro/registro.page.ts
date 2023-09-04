@@ -19,8 +19,9 @@ export class RegistroPage implements OnInit {
           usuario: this.user,
           pass: this.con
         }
+        
       }
-      this.router.navigate(['login'], parametros);
+      this.router.navigate(['login'],parametros);
     }
   }
 

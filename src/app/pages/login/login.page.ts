@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationExtras, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -10,32 +11,37 @@ import { NavigationExtras, Router } from '@angular/router';
 export class LoginPage implements OnInit {
   mdl_user: string = '';
   mdl_contra: string = '';
-  colored: string = "danger";
-  colorgre: string="success";
+  mdlnew_contra: string = '';
   isAlertOpen = false;
   alertButtons = ['OK'];
   user:string="";
   password:string="";
-  constructor(private router: Router) { }
-
-  ngOnInit() {
-    let parametros = this.router.getCurrentNavigation();
-    if(parametros?.extras.state) {
-      this.mdl_user = parametros?.extras.state['usuario'];
-      this.mdl_contra = parametros?.extras.state['pass'];
-    }
-  }
-  ingresar(){
-    if(this.user == this.mdl_user && this.password == this.mdl_contra){
+  constructor(private router: Router){ 
       
+ 
+  }
+
+  ngOnInit(){
+        let parametros = this.router.getCurrentNavigation();
+        console.log(parametros?.extras.state);
+        if (parametros?.extras.state) {
+          this.mdl_user = parametros?.extras.state['usuario'];
+          this.mdl_contra = parametros?.extras.state['pass'];
+          this.mdlnew_contra=parametros?.extras.state['newpass']
+        }
+    };
+  ingresar(){
+    if (this.user == this.mdl_user && (this.password == this.mdl_contra || this.password == this.mdlnew_contra)){
       let parametros: NavigationExtras = {
         state: {
           user: this.mdl_user,
-          pass: this.mdl_contra
+          pass: this.mdl_contra,
+          newpass:this.mdlnew_contra
         }
       }
       this.router.navigate(['principal'], parametros);
-    } else {
+    }
+    else {
       this.isAlertOpen = true;
     }
   }
@@ -43,9 +49,11 @@ export class LoginPage implements OnInit {
     let parametros: NavigationExtras = {
       state: {
         user: this.mdl_user,
-        pass: this.mdl_contra
+        pass: this.mdl_contra,
+        newpass:this.mdlnew_contra
       }
     }
+
     this.router.navigate(["restcont"],parametros)
   }
   setOpen(isOpen: boolean) {
@@ -53,6 +61,9 @@ export class LoginPage implements OnInit {
   }
   registrar(){
     this.router.navigate(["registro"])
+  }
+  recargar(){
+    window.location.reload();
   }
 
 }
