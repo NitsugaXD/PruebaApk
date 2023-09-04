@@ -16,6 +16,7 @@ export class LoginPage implements OnInit {
   alertButtons = ['OK'];
   user:string="";
   password:string="";
+  mostrarBotones: boolean = false;
   constructor(private router: Router){ 
   }
 
@@ -30,6 +31,11 @@ export class LoginPage implements OnInit {
     };
     
   ingresar(){
+    if (this.user=="" || this.password==""){
+      console.log("XD")
+
+    }
+    else{
     if (this.user == this.mdl_user && (this.password == this.mdl_contra || this.password == this.mdlnew_contra)){
       let parametros: NavigationExtras = {
         state: {
@@ -43,7 +49,7 @@ export class LoginPage implements OnInit {
     else {
       this.isAlertOpen = true;
     }
-  }
+  }}
   restablecer(){
     let parametros: NavigationExtras = {
       state: {

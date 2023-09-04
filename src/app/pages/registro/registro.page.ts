@@ -14,6 +14,10 @@ export class RegistroPage implements OnInit {
   ngOnInit() {
   }
   registrar(){
+    if(this.user=="" || this.con==""){
+      console.log("XD")
+    }
+    else{
       let parametros: NavigationExtras = {
         state: {
           usuario: this.user,
@@ -24,4 +28,4 @@ export class RegistroPage implements OnInit {
       this.router.navigate(['login'],parametros);
     }
   }
-
+}

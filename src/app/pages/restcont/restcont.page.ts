@@ -26,20 +26,26 @@ alertButtons = ['OK'];
     }
   }
   confirmar(){
-    if (this.usuario == this.user){
-      this.pass=this.contrasena
-      let parametros: NavigationExtras= {
-        state: {
-          usuario: this.user,
-          newpass: this.contrasena
-        }
-      }
-      console.log(this.user, this.pass)
-      this.router.navigate(['login'],parametros)  
+    if(this.usuario==""||this.contrasena==""){
+      console.log("XD")
     }
     else{
-      this.isAlertOpen = true;
+      if (this.usuario == this.user){
+        this.pass=this.contrasena
+        let parametros: NavigationExtras= {
+          state: {
+            usuario: this.user,
+            newpass: this.contrasena
+          }
+        }
+        console.log(this.user, this.pass)
+        this.router.navigate(['login'],parametros)  
+      }
+      else{
+        this.isAlertOpen = true;
+      }
     }
+
   }
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;
