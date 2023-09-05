@@ -23,7 +23,7 @@ export class RegistroPage implements OnInit {
           usuario: this.user,
           pass: this.con
         }
-        
+        ,replaceUrl:true
       }
       this.router.navigate(['login'],parametros);
     }

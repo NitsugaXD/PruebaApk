@@ -36,9 +36,10 @@ alertButtons = ['OK'];
           state: {
             usuario: this.user,
             newpass: this.contrasena
-          }
+          },
+            replaceUrl:true
+          
         }
-        console.log(this.user, this.pass)
         this.router.navigate(['login'],parametros)  
       }
       else{
@@ -56,7 +57,8 @@ alertButtons = ['OK'];
         usuario: this.usuario,
         pass: this.contrasena,
         newpass:this.newpass
-      }
+      },
+      replaceUrl:true
   }
   this.router.navigate(['login'],parametros);
   }

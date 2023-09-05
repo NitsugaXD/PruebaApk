@@ -42,7 +42,8 @@ export class LoginPage implements OnInit {
           user: this.mdl_user,
           pass: this.mdl_contra,
           newpass:this.mdlnew_contra
-        }
+        },
+        replaceUrl:true
       }
       this.router.navigate(['principal'], parametros);
     }
@@ -56,7 +57,8 @@ export class LoginPage implements OnInit {
         user: this.mdl_user,
         pass: this.mdl_contra,
         newpass:this.mdlnew_contra
-      }
+      },
+      replaceUrl:true
     }
 
     this.router.navigate(["restcont"],parametros)
@@ -65,10 +67,10 @@ export class LoginPage implements OnInit {
     this.isAlertOpen = isOpen;
   }
   registrar(){
-    this.router.navigate(["registro"])
-  }
-  recargar(){
-    window.location.reload()
+    let parametros: NavigationExtras={
+      replaceUrl:true
+    }
+    this.router.navigate(["registro"],parametros)
   }
 
 }

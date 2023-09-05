@@ -21,11 +21,8 @@
     <ion-item class="input-field butin" lines="none">
       <ion-input label="Contraseña" type="password" labelPlacement="floating" [(ngModel)]="password"></ion-input>
     </ion-item>
-    <ion-label>Debes recargar la pagina despues de registrado y si cambiaste tu contraseña tambien debes recargar</ion-label>
-    <ion-button (click)="recargar()"     class="login-button butin" >Recargar</ion-button>
-    <ion-button (click)="mostrarBotones=!mostrarBotones"     class="login-button butin" >Despues de recagar pulsame</ion-button>
-    <ion-button (click)="ingresar()"     class="login-button butin" *ngIf="mostrarBotones"> Ingresar              </ion-button>
-    <ion-button (click)="restablecer()"  class="reset-button butin" *ngIf="mostrarBotones"> Restablecer Contraseña</ion-button>
+    <ion-button (click)="ingresar()"     class="login-button butin" > Ingresar              </ion-button>
+    <ion-button (click)="restablecer()"  class="reset-button butin" > Restablecer Contraseña</ion-button>
 
   </div>
 

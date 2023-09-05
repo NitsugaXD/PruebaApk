@@ -23,7 +23,8 @@ volver(){
     state: {
       user: this.usuario,
       pass: this.contrasena
-    }
+      
+    },replaceUrl:true
 }
 this.router.navigate(['login'],parametros);
 }
