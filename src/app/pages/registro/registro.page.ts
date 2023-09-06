@@ -11,11 +11,13 @@ export class RegistroPage implements OnInit {
   constructor(private router: Router) { }
   user:string="";
   con:string="";
+  alertvacio = false;
+  alertButtons = ['OK'];
   ngOnInit() {
   }
   registrar(){
     if(this.user=="" || this.con==""){
-      console.log("XD")
+      this.alertvacio = true;
     }
     else{
       let parametros: NavigationExtras = {
@@ -27,5 +29,8 @@ export class RegistroPage implements OnInit {
       }
       this.router.navigate(['login'],parametros);
     }
+  }
+  alertavacia(abierto: boolean) {
+    this.alertvacio = abierto;
   }
 }

@@ -7,14 +7,15 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./restcont.page.scss'],
 })
 export class RestcontPage implements OnInit {
-recargar: boolean = true;
 usuario:string="";
 contrasena:string="";
 user:string="";
 pass:string="";
 newpass:string="";
 isAlertOpen = false;
+alertvacio = false;
 alertButtons = ['OK'];
+
 
   constructor(private router: Router) { }
   ngOnInit() {
@@ -26,7 +27,7 @@ alertButtons = ['OK'];
   }
   confirmar(){
     if(this.usuario==""||this.contrasena==""){
-      console.log("XD")
+      this.alertvacio = true;
     }
     else{
       if (this.usuario == this.user){
@@ -49,6 +50,9 @@ alertButtons = ['OK'];
   }
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;
+  }
+  alertavacia(abierto: boolean) {
+    this.alertvacio = abierto;
   }
   volver(){
     let parametros: NavigationExtras = {

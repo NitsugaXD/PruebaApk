@@ -13,6 +13,7 @@ export class LoginPage implements OnInit {
   mdl_contra: string = '';
   mdlnew_contra: string = '';
   isAlertOpen = false;
+  alertvacio = false;
   alertButtons = ['OK'];
   user:string="";
   password:string="";
@@ -31,7 +32,7 @@ export class LoginPage implements OnInit {
     
   ingresar(){
     if (this.user=="" || this.password==""){
-      console.log("XD")
+      this.alertvacio = true;
 
     }
     else{
@@ -64,6 +65,9 @@ export class LoginPage implements OnInit {
   }
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;
+  }
+  alertavacia(abierto: boolean) {
+    this.alertvacio = abierto;
   }
   registrar(){
     let parametros: NavigationExtras={

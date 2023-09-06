@@ -31,6 +31,13 @@
   [buttons]="alertButtons"
   (didDismiss)="setOpen(false)">
 </ion-alert>
+<ion-alert
+[isOpen]="alertvacio"
+header="Información"
+message="No puede estar vacio"
+[buttons]="alertButtons"
+(didDismiss)="alertavacia(false)">
+</ion-alert>
 </ion-content>
 
 

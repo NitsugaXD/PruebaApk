@@ -24,4 +24,11 @@
 
   <ion-button class="login-button butin" (click)="registrar()">Registrarse</ion-button>
   </div>
+  <ion-alert
+[isOpen]="alertvacio"
+header="Información"
+message="No puede estar vacio"
+[buttons]="alertButtons"
+(didDismiss)="alertavacia(false)">
+</ion-alert>
 </ion-content>
