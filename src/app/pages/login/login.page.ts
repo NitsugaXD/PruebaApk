@@ -16,7 +16,6 @@ export class LoginPage implements OnInit {
   alertButtons = ['OK'];
   user:string="";
   password:string="";
-  mostrarBotones: boolean = false;
   constructor(private router: Router){ 
   }
 

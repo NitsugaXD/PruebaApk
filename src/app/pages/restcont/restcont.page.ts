@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-restcont',
@@ -17,7 +16,7 @@ newpass:string="";
 isAlertOpen = false;
 alertButtons = ['OK'];
 
-  constructor(private router: Router, private navCtrl: NavController) { }
+  constructor(private router: Router) { }
   ngOnInit() {
     let parametros = this.router.getCurrentNavigation();
     if(parametros?.extras.state) {
