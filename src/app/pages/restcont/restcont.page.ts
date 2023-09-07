@@ -34,7 +34,7 @@ alertButtons = ['OK'];
         this.pass=this.contrasena
         let parametros: NavigationExtras= {
           state: {
-            usuario: this.user,
+            user: this.user,
             newpass: this.contrasena
           },
             replaceUrl:true
@@ -57,7 +57,7 @@ alertButtons = ['OK'];
   volver(){
     let parametros: NavigationExtras = {
       state: {
-        usuario: this.usuario,
+        user: this.usuario,
         pass: this.contrasena,
         newpass:this.newpass
       },

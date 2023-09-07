@@ -7,19 +7,19 @@
 
 <ion-content [fullscreen]="true" class="barra">
   <div class="login-container">
-
-    <ion-img src="assets/registro.svg"></ion-img>
-
+    <div class="XD">
+      <ion-img src="assets/registro.svg"></ion-img>
+    </div>
       <ion-label position="floating">Ingrese el Nombre de Usuario</ion-label>
 
     <ion-item class="input-field butin" lines="none">
-      <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="user"></ion-input>
+      <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="nuevo_usuario"></ion-input>
     </ion-item>
 
     <ion-label position="floating">Ingrese su Contraseña</ion-label>
     
     <ion-item class="input-field butin" lines="none">
-      <ion-input label="Contraseña" labelPlacement="floating" [(ngModel)]="con" type="password"></ion-input>
+      <ion-input label="Contraseña" labelPlacement="floating" [(ngModel)]="nueva_contrasena" type="password"></ion-input>
     </ion-item>
 
   <ion-button class="login-button butin" (click)="registrar()">Registrarse</ion-button>

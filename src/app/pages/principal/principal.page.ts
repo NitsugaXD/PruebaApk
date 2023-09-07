@@ -23,7 +23,7 @@ export class PrincipalPage implements OnInit {
 volver(){
   let parametros: NavigationExtras = {
     state: {
-      usuario: this.usuario,
+      user: this.usuario,
       pass: this.contrasena,
       newpass: this.newpass
     },replaceUrl:true

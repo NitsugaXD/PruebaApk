@@ -9,14 +9,14 @@ import { filter } from 'rxjs';
 })
 
 export class LoginPage implements OnInit {
-  mdl_user: string = '';
-  mdl_contra: string = '';
-  mdlnew_contra: string = '';
+  usuario_creado: string = '';
+  contrasena_creada: string = '';
+  nueva_contrasena_creada: string = '';
   isAlertOpen = false;
   alertvacio = false;
   alertButtons = ['OK'];
-  user:string="";
-  password:string="";
+  usuario_para_ingresar:string="";
+  contrasena_para_ingresar:string="";
   constructor(private router: Router){ 
   }
 
@@ -24,24 +24,24 @@ export class LoginPage implements OnInit {
         let parametros = this.router.getCurrentNavigation();
         console.log(parametros?.extras.state);
         if (parametros?.extras.state) {
-          this.mdl_user = parametros?.extras.state['usuario'];
-          this.mdl_contra = parametros?.extras.state['pass'];
-          this.mdlnew_contra=parametros?.extras.state['newpass']
+          this.usuario_creado = parametros?.extras.state['user'];
+          this.contrasena_creada = parametros?.extras.state['pass'];
+          this.nueva_contrasena_creada=parametros?.extras.state['newpass']
         }
     };
     
   ingresar(){
-    if (this.user=="" || this.password==""){
+    if (this.usuario_para_ingresar=="" || this.contrasena_para_ingresar==""){
       this.alertvacio = true;
 
     }
     else{
-    if (this.user == this.mdl_user && (this.password == this.mdl_contra || this.password == this.mdlnew_contra)){
+    if (this.usuario_para_ingresar == this.usuario_creado && (this.contrasena_para_ingresar == this.contrasena_creada || this.contrasena_para_ingresar == this.nueva_contrasena_creada)){
       let parametros: NavigationExtras = {
         state: {
-          user: this.mdl_user,
-          pass: this.mdl_contra,
-          newpass:this.mdlnew_contra
+          user: this.usuario_creado,
+          pass: this.contrasena_creada,
+          newpass:this.nueva_contrasena_creada
         },
         replaceUrl:true
       }
@@ -54,9 +54,9 @@ export class LoginPage implements OnInit {
   restablecer(){
     let parametros: NavigationExtras = {
       state: {
-        user: this.mdl_user,
-        pass: this.mdl_contra,
-        newpass:this.mdlnew_contra
+        user:   this.usuario_creado,
+        pass:   this.contrasena_creada,
+        newpass:this.nueva_contrasena_creada
       },
       replaceUrl:true
     }
