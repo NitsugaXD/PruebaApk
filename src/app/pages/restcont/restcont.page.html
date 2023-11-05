@@ -13,32 +13,16 @@
       <div class="XD">
     <ion-img src="assets/restablecer.svg"></ion-img>
       </div>
-
-<ion-item class="input-field butin" lines="none">
-  <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="usuario">
-    Ingresa tu usuario para confirmar tu identidad
-  </ion-input>
-</ion-item>
-
 <ion-item class="input-field butin" lines="none">
   <ion-input label="Contraseña" labelPlacement="floating" [(ngModel)]="contrasena" type="password">
+    Ingresa tu contraseña actual
+  </ion-input>
+</ion-item>
+<ion-item class="input-field butin" lines="none">
+  <ion-input label="Contraseña" labelPlacement="floating" [(ngModel)]="contrasenanueva" type="password">
     Ingresa tu nueva contraseña
   </ion-input>
 </ion-item>
 <ion-button class="login-button butin" (click)="confirmar()" >Cambiar contraseña</ion-button>
 </div>
-<ion-alert
-[isOpen]="isAlertOpen"
-header="Información"
-message="Usuario Invalido"
-[buttons]="alertButtons"
-(didDismiss)="setOpen(false)">
-</ion-alert>
-<ion-alert
-[isOpen]="alertvacio"
-header="Información"
-message="No puede estar vacio"
-[buttons]="alertButtons"
-(didDismiss)="alertavacia(false)">
-</ion-alert>
 </ion-content>

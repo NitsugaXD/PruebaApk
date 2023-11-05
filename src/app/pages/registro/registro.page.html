@@ -1,34 +1,44 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar class="barra">
-    <ion-title>Registro</ion-title>
-    <ion-back-button defaultHref="/" slot="start"></ion-back-button>
+    <ion-title>
+      Registro de Usuario
+    </ion-title>
+    <ion-button (click)="volver()" slot="start" class="barra">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="barra">
+<ion-content class="barra">
   <div class="login-container">
     <div class="XD">
-      <ion-img src="assets/registro.svg"></ion-img>
+  <ion-img src="assets/cat.svg"></ion-img>
     </div>
-      <ion-label position="floating">Ingrese el Nombre de Usuario</ion-label>
+  <ion-item class="barra">
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input [(ngModel)]="usuario" type="text"></ion-input>
+  </ion-item>
 
-    <ion-item class="input-field butin" lines="none">
-      <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="nuevo_usuario"></ion-input>
-    </ion-item>
+  <ion-item class="barra">
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+  </ion-item>
 
-    <ion-label position="floating">Ingrese su Contraseña</ion-label>
-    
-    <ion-item class="input-field butin" lines="none">
-      <ion-input label="Contraseña" labelPlacement="floating" [(ngModel)]="nueva_contrasena" type="password"></ion-input>
-    </ion-item>
+  <ion-item class="barra">
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input [(ngModel)]="apellido" type="text"></ion-input>
+  </ion-item>
 
-  <ion-button class="login-button butin" (click)="registrar()">Registrarse</ion-button>
+  <ion-item class="barra"> 
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input [(ngModel)]="correo" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item class="barra">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)]="contrasena" type="password"></ion-input>
+  </ion-item>
+
+  <ion-button class="btn"  (click)="registrarUsuario()">Registrar</ion-button>
   </div>
-  <ion-alert
-[isOpen]="alertvacio"
-header="Información"
-message="No puede estar vacio"
-[buttons]="alertButtons"
-(didDismiss)="alertavacia(false)">
-</ion-alert>
 </ion-content>

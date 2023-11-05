@@ -1,12 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="barra">
-    <ion-title>Hola Alumn@: {{usuario}}</ion-title>
-    <ion-button (click)="volver()" slot="start">
-      <ion-icon name="arrow-back-outline"></ion-icon>
+    <ion-title>Hola Alumn@: {{ nombre }}</ion-title>
+    <ion-button (click)="cerrarsesion()" slot="start" class="barra">
+      <ion-icon name="enter-outline"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true" class="barra">
 
+  <div class="login-container">
+    <div class="XD">
+  <ion-img src="assets/vip.svg"></ion-img>
+    </div>
+  <ion-item class="barra">  
+  <ion-button class="barra" (click)="cambiarcontrasena()" >Cambiar Contraseña</ion-button>
+  </ion-item>
+  </div>
 </ion-content>

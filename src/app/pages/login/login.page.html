@@ -1,44 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar class="barra">
-    <ion-title>Bienvenido</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="registrar()" class="corner-button" >Registrarse</ion-button>
-    </ion-buttons>
+    <ion-title>
+      Iniciar Sesión
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="color-neutro">
+<ion-content class="barra">
   <div class="login-container">
-      <ion-img src="assets/loginsvg.svg" class="XD"></ion-img>
-    <ion-label>Ingresa tus Credenciales:</ion-label>
+    <div class="XD">
+  <ion-img src="assets/loginsvg.svg"></ion-img>
+    </div>
+  <ion-item class="input-item"> 
+    <ion-label position="floating">Nombre de Usuario</ion-label>
+    <ion-input class="input-field" [(ngModel)]="usuario" type="text"></ion-input>
+  </ion-item>
 
-    <ion-item class="input-field butin" lines="none">
-      <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="usuario_para_ingresar"></ion-input>
-    </ion-item>
+  <ion-item class="input-item">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input class="input-field" [(ngModel)]="contrasena" type="password"></ion-input>
+  </ion-item>
 
-    <ion-item class="input-field butin" lines="none">
-      <ion-input label="Contraseña" type="password" labelPlacement="floating" [(ngModel)]="contrasena_para_ingresar"></ion-input>
-    </ion-item>
-    <ion-button (click)="ingresar()"     class="login-button butin" > Ingresar              </ion-button>
-    <ion-button (click)="restablecer()"  class="reset-button butin" > Restablecer Contraseña</ion-button>
-
+  <ion-button class="btn" expand="full" (click)="inicioSesion()">Iniciar Sesión</ion-button>
+  <ion-button class="btn" expand="full" (click)="registrar()">Registrate</ion-button>
   </div>
-
-  <ion-alert
-  [isOpen]="isAlertOpen"
-  header="Información"
-  message="Credenciales Inválidas"
-  [buttons]="alertButtons"
-  (didDismiss)="setOpen(false)">
-</ion-alert>
-<ion-alert
-[isOpen]="alertvacio"
-header="Información"
-message="No puede estar vacio"
-[buttons]="alertButtons"
-(didDismiss)="alertavacia(false)">
-</ion-alert>
 </ion-content>
-
-
-

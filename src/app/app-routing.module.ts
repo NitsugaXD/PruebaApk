@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'espera',
     pathMatch: 'full'
   },
   {
@@ -24,9 +24,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
+    path: 'espera',
+    loadChildren: () => import('./pages/espera/espera.module').then( m => m.EsperaPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   },
+
 ];
 
 @NgModule({

@@ -1,16 +1,58 @@
 
 .butin{
     --background: rgb(63,94,251);
-    --background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    --background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(70,252,106,1) 100%);
 }
 .barra{
     --background: rgb(63,94,251);
-    --background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    --background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(70,252,106,1) 100%);
+    --text-align: center;
 }
 .color-neutro{
-    --background: rgb(131,58,180);
-    --background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,69,211,1) 51%, rgba(213,29,253,1) 100%);
+    --background: rgb(63,94,251);
+    --background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(70,252,106,1) 100%);
 }
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #368e62; /* Color de fondo */
+}
+
+.input-item {
+    text-align: center;
+}
+
+.input-field {
+    width: 200px;
+    
+    --background: transparent; /* Fondo transparente */
+    margin: 0 auto; /* Centra el campo de entrada */
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff; /* Color del botón */
+    color: #fff; /* Color del texto */
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Transición de color y tamaño */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Aumento de tamaño al pasar el mouse */
+}
+
+
+
+
+
 .XD{
     width: 60%;
     margin:auto;
@@ -20,7 +62,7 @@
     margin:  auto;
     padding: 20px;
     border: 4px solid #E6E6FA;
-    background-color:#4B0082;
+    background-color:#008245;
     text-align: center;
 
     
@@ -28,17 +70,7 @@
     font-size: 24px;
     margin-bottom: 20px;
     }
-.input-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
 
-    &:focus {
-        outline: none;
-        border-color: #E6E6FA;
-    }
-    }
 
     
     .login-button {
